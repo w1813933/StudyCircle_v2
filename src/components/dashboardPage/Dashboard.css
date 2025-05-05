@@ -1,0 +1,411 @@
+
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+}
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 230px 1fr;  
+    grid-template-rows: 100vh;         
+    background-color: rgb(233, 233, 233);
+}
+
+#left-column {
+    background-color: rgb(239, 248, 255);
+    padding: 20px;
+    border-right: 2px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#left-column button {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: rgb(239, 248, 255);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+#left-column button:hover {
+    background-color: rgb(200, 226, 247);
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+#left-column .dashboard-select.active {
+    background-color: rgb(200, 226, 247);
+    color: black;
+}
+
+.div {
+    border: 1px solid #9f9f9f;
+    padding: 10px;
+}
+
+header {
+    grid-column: span 1; 
+    background-color: rgb(239, 248, 255);
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    
+}
+
+.dashboard-logo{
+    width: 180px;
+    height: auto;
+    
+}
+
+
+
+
+#dashboard-page {
+    flex: 1;
+    position: relative;
+    padding: 20px;
+    height: 100%;
+    flex-direction: column;
+    height:auto;
+    max-height:98%;
+    overflow: hidden;
+}
+
+.dashboard-header-container{
+    position: sticky;
+    top: 0;
+    margin-bottom: 40px;
+    width: 300px;
+    height: fit-content;
+    flex-shrink: 0;
+    z-index: 2;
+    
+    
+}
+.welcome_header{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    background-color: rgb(239, 248, 255);
+    text-align: start;
+    border-radius: 30px;
+    padding: 20px;
+    width: 600px;
+    height: 80px;
+    position: relative;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    color: black;
+   
+    
+}
+
+
+#datetime {
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    background-color: rgb(239, 248, 255);
+    text-align: start;
+    border-radius: 30px;
+    padding: 20px;
+    width: 150px;
+    height: 80px;
+    left: 730px;
+    top:-140px;
+    position: relative;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    color: black;
+   
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    margin-left: 20px; 
+    border-radius: 50%;
+    border: none;
+    background-color: rgb(200, 226, 247);
+    color: white;
+    font-size: 80px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    left: 1000px;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+#task_display, #notes, #deadlines_view, #break, #calendar_view {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: rgb(239, 248, 255);
+    text-align: start;
+    border-radius: 30px;
+    padding: 20px;
+    position: relative;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    color: black;
+
+}
+
+.dashboard-section-task{
+    position: relative;
+}
+
+.dashboard-section-notes{
+    position: relative;
+    top:-10px;
+}
+
+.dashboard-section-deadline{
+    position: relative;
+    top:-14px;
+}
+
+.dashboard-section-break{
+    position: absolute;
+    top: 145px;
+    left: 820px;
+}
+
+.break-controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    z-index: 100px;
+  }
+.break-controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    
+}
+
+.dashboard-section-calendar{
+    position: absolute;
+    top: 400px;
+    left: 825px; 
+}
+
+#task_display{
+    width: 745px;
+    height: 200px;
+    top: -150px;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task_display_notify {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+    overflow-y: auto;
+}
+
+.task_display_notify:last-child {
+    border-bottom: none;
+  }
+
+.note-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notes_display_notify {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+    overflow-y: auto;
+}
+
+.notes_display_notify:last-child {
+    border-bottom: none;
+  }
+
+.deadline-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.deadline_display_notify {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+    overflow-y: auto;
+}
+
+.deadline_display_notify:last-child {
+    border-bottom: none;
+  }
+
+
+#notes {
+    width: 350px;
+    height: 250px;
+    top: -150px;
+}
+
+
+
+#deadlines_view {
+    width: 350px;
+    height: 250px;
+    top: -459px;
+    left: 400px;
+}
+
+
+#break {
+    width: 400px;
+    height: 200px;
+    
+}
+
+#calendar_view {
+    width: 400px;
+    height: 250px;
+    
+}
+
+
+
+/*Break Timer*/
+.break-timer {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.break-timer h2 {
+    font-size: 50px;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.timer-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.play {
+    background-color: #22c55e;
+    color: white;
+}
+
+.pause {
+    background-color: #facc15;
+    color: black;
+}
+
+.restart {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.timer-btn:hover {
+    opacity: 0.9;
+    
+}
+
+
+
+
+
+
+/*Dark Mode*/
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .dashboard-container {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode #left-column {
+    background-color: #1c1c1c;
+    border-right: 2px solid #333;
+}
+
+body.dark-mode #left-column button {
+    background-color: #1c1c1c;
+    color: #ffffff;
+}
+
+body.dark-mode #left-column button:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+body.dark-mode .dashboard-header {
+    background-color: #1c1c1c;
+    color: #ffffff;
+}
+
+body.dark-mode .div {
+    border: 1px solid #555;
+    background-color: #2a2a2a;
+    color: white;
+}
+
+body.dark-mode #dashboard-page {
+    background-color: #121212;
+    color: white;
+}
+
+body.dark-mode .dashboard-logo {
+    filter: brightness(0.9) invert(1);
+}
+
+body.dark-mode #left-column .dashboard-select.active {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+body.dark-mode #task_display, body.dark-mode #notes, body.dark-mode #deadlines_view, body.dark-mode #break, body.dark-mode #calendar_view, body.dark-mode #datetime {
+    background-color: #1c1c1c;
+    color: #ffffff;
+}
+
+body.dark-mode .profile{
+    background-color: #1c1c1c;
+    color: #ffffff;
+}
+
+body.dark-mode .profile-pic  {
+    filter: brightness(0.9) invert(1);
+}
